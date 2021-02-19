@@ -1,16 +1,20 @@
 spring:
-  datasource:
-    # gcp 내부ip로 접근 가능하므로 내부ip 넣어도 된다.
-    url: jdbc:postgresql://10.140.0.2:5432/postgresql
-    username: postgresql
-    password: postgrespassword
-  jpa:
-    show-sql: true
-    hibernate:
-      dialect: org.hibernate.dialect.PostgreSQLDialect
-      ddl-auto: update
+#  datasource:
+#    # gcp 내부ip로 접근 가능하므로 내부ip 넣어도 된다.
+#    url: jdbc:postgresql://10.140.0.2:5432/postgresql
+#    username: postgresql
+#    password: postgrespassword
+#  jpa:
+#    show-sql: true
+#    hibernate:
+#      dialect: org.hibernate.dialect.PostgreSQLDialect
+#      ddl-auto: update
   rabbitmq:
-    host: 10.146.0.2
+    host: 10.174.0.2
     username: guest
     password: guest
     port: 5672
+  data:
+    elasticsearch:
+      hosts: 10.146.0.3,10.146.0.7,10.146.0.9,10.146.0.8
+      port: 9200
